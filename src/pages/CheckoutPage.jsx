@@ -272,7 +272,7 @@ const CheckoutPage = () => {
           <div>
             <section className="checkout-section">
               <div className="left">
-                <h1>SHIPPING ADDRESS</h1>
+                <h1>SHIPPING ADDRESS check</h1>
                 <div>
                   <form
                     className="checkout-form"
