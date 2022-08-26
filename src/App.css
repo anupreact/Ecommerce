@@ -1,38 +1,1427 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* color:#d8e70b */
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+body {
+  /* overflow: hidden; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(17, 16, 16);
+  background: rgb(130, 210, 253);
+  /* background: linear-gradient(to top, #09203f 0%, #537895 100%); */
+  /* background: rgb(244, 180, 32); */
+}
+.container {
+  overflow: scroll;
+  /* padding: 1rem; */
+  width: 90vw;
+  height: 95vh;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* background: linear-gradient(108.1deg, rgb(167, 220, 225) 11.2%, rgb(217, 239, 242) 88.9%); */
+  /* background: rgb(223, 247, 255); */
+  /* background: linear-gradient(109.6deg, rgb(0, 0, 0) 11.2%, rgb(11, 132, 145) 91.1%); */
+  background: rgb(130, 210, 253);
+  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+
+  /* background: #000;
+  color:white; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* border: 2px solid red; */
+}
+.container::-webkit-scrollbar {
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/**************************************************** SCROLL TO TOP BUTTON  ********************************************************/
+
+
+.top-to-btm {
+  position: relative;
+}
+.icon-position {
+  position: fixed;
+  bottom: 40px;
+  right: 25px;
+  z-index: 20;
+}
+.icon-style {
+  background-color: #551b54;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  color: #fff;
+  cursor: pointer;
+  animation: movebtn 3s ease-in-out infinite;
+  transition: all 0.5s ease-in-out;
+}
+.icon-style:hover {
+  animation: none;
+  background: #fff;
+  color: #551b54;
+  border: 2px solid #551b54;
+}
+@keyframes movebtn {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*************************************************** SCROLL TO TOP BUTTON  ********************************************************/
+
+header,
+main,
+footer {
+  margin: 0.4rem 0rem;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  /* border-radius: 10px; */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  /* background: #000;
+  color:"cyan" */
+}
+/******************************************************** HEADER ********************************************************/
+header {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  box-shadow: none !important;
+  border: none;
+  border-radius: 0px;
+  min-height: 50px;
+  padding: 0px 2rem;
+  position: sticky;
+  top: -2px;
+  z-index: 100;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background: rgb(206, 212, 215); */
+  background: linear-gradient(
+    90deg,
+    rgba(206, 212, 215, 1) -3%,
+    rgba(52, 196, 220, 1) 10%,
+    rgba(32, 194, 221, 1) 0%,
+    rgba(0, 36, 33, 1) 165%
+  );
+}
+header .logo,
+footer .logo {
+  text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15), 40px 40px 19px rgba(48, 39, 158, 0.29);
+}
+
+header span {
+  margin: 0.5rem;
+  /* color: rgb(13, 215, 255); */
+  transition: 0.3s ease all;
+  /* font-weight: bold; */
+}
+header a {
+  color: rgb(19, 19, 19);
+  letter-spacing: 0.07rem;
+  font-size: 1rem;
+}
+
+header span:hover {
+  cursor: pointer;
+  color: rgb(122, 122, 122);
+  color: rgb(55, 255, 255);
+}
+
+.nav-links .active {
+  color: rgb(55, 255, 255);
+  /* border-bottom: 1px solid rgb(24, 237, 237); */
+}
+.right-nav .active {
+  color: rgb(25, 244, 255) !important;
+}
+
+.h-btn {
+  font-size: 1rem;
+  /* font-weight: bold; */
+  background: #69dfe8;
+  background: -moz-linear-gradient(left, #35add9 0%, #5d9ea4 0%, #71bec5 100%);
+  background: -webkit-linear-gradient(
+    left,
+    #6cddf9 0%,
+    #5da3a4 0%,
+    #0c96d5 100%
+  );
+  background: linear-gradient(to right, #6ea9ce 0%, #3db5e5 0%, #09a09d 100%);
+}
+
+.right-nav {
+  width: 10rem;
+  height: 2rem;
+  display: flex;  
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+.right-nav i {
+  color: rgb(27, 24, 24);
+  font-size: 17px;
+  transition: 0.1s ease all;
+}
+.right-nav i:hover {
+  color: rgb(102, 205, 246);
+  font-size: 19px;
+}
+.right-nav i b {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  bottom: 1rem;
+  color: rgb(102, 205, 246);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  left: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+/******************************************************** HEADER ********************************************************/
+
+/* Main Banner section */
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* min-height: 450px; */
+}
+
+/******************************************************** BANNER ********************************************************/
+
+main.banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: none !important;
+  margin-top: 0px !important;
+  min-height: 17rem;
+  padding: 0.4rem;
+  background: linear-gradient(
+    90deg,
+    rgba(206, 212, 215, 1) -3%,
+    rgba(52, 196, 220, 1) 10%,
+    rgba(32, 194, 221, 1) 0%,
+    rgba(0, 36, 33, 1) 165%
+  );
+}
+.banner .image,
+.banner .banner-text {
+  width: 47%;
+  margin: 0.3rem;
+}
+.banner img {
+  width: 30vw;
+}
+.banner .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner .banner-text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 1rem;
+}
+.banner .banner-text h1 {
+  text-shadow: 40px 40px 19px rgba(48, 39, 158, 0.29);
+  text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15), 40px 40px 19px rgba(48, 39, 158, 0.29);
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  color: rgb(255, 255, 255);
+  font-variant: normal;
+  text-transform: capitalize;
+}
+.banner .banner-text p {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin: 0.5rem 0rem;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+  word-spacing: 1px;
+  color: #dbf1f1;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+}
+.banner .banner-text button {
+  background: #ce6e9a;
+  background: -moz-linear-gradient(left, #ce6e9a 0%, #a45d7a 0%, #c571af 100%);
+  background: -webkit-linear-gradient(
+    left,
+    #ce6e9a 0%,
+    #a45d7a 0%,
+    #c571af 100%
+  );
+  background: linear-gradient(to right, #ce6e9a 0%, #a45d7a 0%, #c571af 100%);
+}
+
+/******************************************************** BANNER ********************************************************/
+
+/******************************************************** MAIN SECTION ********************************************************/
+main section {
+  margin: 0.7rem;
+  width: 47%;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/******************************************************** MAIN SECTION ********************************************************/
+
+/* Pagination */
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination-container .pgbtn {
+  padding: 0rem 0.2rem;
+}
+.pagination-container .pgselect {
+  width: 7rem;
+  margin: 0rem 0.4rem;
+}
+ul.pagination {
+  margin-top: 0.8rem;
+}
+ul.pagination li {
+  list-style-type: none;
+  display: inline;
+  flex-direction: row;
+  color: rgb(13, 143, 249);
+  border: 1px solid rgb(255, 255, 255);
+  padding: 0.2rem 0.3rem;
+  margin: 0.3rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  margin-top: 0.2rem;
+}
+ul.pagination li.active {
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
+}
+/* Pagination */
+
+/******************************************************** FEATURED CATEGORIES ********************************************************/
+
+main.featured .featured {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem 0rem;
+}
+
+.featured-heading {
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+
+  line-height: 20px;
+  /* margin-top: 0.6rem; */
+  margin: 1rem 0rem;
+  border-bottom: 1px solid #000;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+  font-family: "Bodoni Moda", serif;
+}
+main.featured section {
+  width: 22%;
+  height: auto;
+  padding: 0.3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.card-btn {
+  min-width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.card-btn select {
+  width: 5rem;
+}
+.card-btn button {
+  margin: 0 !important;
+}
+.card-title,
+.card-desc,
+.card-img,
+.card-btn {
+  margin: 0.2rem 0rem;
+}
+.card p.price {
+  color: rgb(49, 49, 49);
+  font-size: 1rem;
+  letter-spacing: 0.08rem;
+  margin-top: 0.4rem;
+}
+.card-img img {
+  height: 30vh;
+}
+
+/* section.card:nth-child(1){
+  border:1px solid red;
+} */
+
+.card-desc,
+.card-title {
+  text-align: center;
+}
+.card-title {
+  font-size: 1rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: #003453;
+}
+.card-desc {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: #226582;
+  font-size: 0.8rem;
+}
+
+/* toast div */
+
+.toastdiv {
+  /* border:1px solid black; */
+  text-align: center;
+  padding: 0.3rem;
+  margin: 1rem auto;
+  width: 16rem;
+  color: rgb(255, 255, 255);
+  background: rgb(15, 162, 173);
+  position: sticky;
+  top: 5rem;
+  z-index: 1;
+}
+/* toast div */
+/******************************************************** FEATURED CATEGORIES *************************************************/
+
+/******************************************************** PRODUCTS CATEGORIES *************************************************/
+
+.featured .products-header {
+  /* background: rgb(206, 129, 129); */
+  width: 85vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem;
+  text-transform: uppercase;
+}
+.products-header span {
+  /* font-weight: bold;
+  width:16rem;
+  cursor: pointer;
+  color: #818486; */
+}
+.products-header .filterList,
+.filterBtn {
+  /* background-color:red; */
+  width: 16rem;
+  padding: 0.3rem;
+  display: flex;
+  /* justify-content: space-around; */
+}
+.filterList{
+  display: flex;
+  /* background: rgb(166, 89, 89); */
+  justify-content: space-between;
+}
+
+.filterBtn {
+  width: 13rem;
+}
+.filterBtn select {
+  width: 9rem;
+  height: 1.5rem;
+}
+.filterList span {
+  list-style-type: none;
+  font-weight: bold;
+  cursor: pointer;
+  color: #818486;
+}
+
+.filterList span.active{
+  color: green;
+  text-decoration: underline;
+}
+
+
+
+/******************************************************** PRODUCTS CATEGORIES *************************************************/
+
+/******************************************************** SPECIAL SECTION ********************************************************/
+/******************************************************** SPECIAL SECTION********************************************************/
+
+/******************************************************** TESTIMONIAL SECTION********************************************************/
+.testimonial-content .heading {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  text-align: center;
+  padding: 0.3rem;
+  margin: 0rem 1rem;
+}
+.testimonial section {
+  border: 1px solid yellow;
+}
+.testimonial-content .heading p:nth-child(1) {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: rgb(31, 30, 30);
+  letter-spacing: 0.2rem;
+  margin: 01rem 0rem;
+}
+.testimonial-content .heading p:nth-child(2) {
+  color: rgb(5, 56, 62);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.testimonial-content .heading p:nth-child(3) {
+  color: rgb(81, 83, 81);
+  margin-bottom: 1rem;
+  width: 80vw;
+}
+.testimonial-card .card-img {
+  padding: 0.2rem;
+}
+
+.testimonial-card img {
+  background: rgb(240, 237, 237);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.testimonial-card .card-desc p {
+  line-height: 1.6rem;
+  padding-bottom: 0px;
+  margin-bottom: 0px !important;
+}
+strong {
+  font-size: 2rem;
+}
+.testimonial-card h4 {
+  color: rgb(8, 105, 84);
+}
+
+.testimonial-card span {
+  font-size: 0.7rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: #56595b;
+}
+/******************************************************** TESTIMONIAL SECTION********************************************************/
+
+/******************************************************** CART SECTION********************************************************/
+
+main.cart,
+main.checkout-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0rem 1rem;
+  margin: 1rem;
+}
+main.cart .cart-head {
+  display: flex;
+  justify-content: space-between;
+  /* border:1px solid red; */
+  padding: 0.4rem 1rem;
+  padding-bottom: 0px;
+  position: sticky;
+  top: 48px;
+  background: rgb(255, 247, 247);
+  z-index: 1;
+}
+main.cart section,
+main.checkout-wrapper section {
+  width: 100%;
+  margin: 0;
+  padding: 0.1rem 1rem;
+  margin: 0rem 0rem 1rem 0rem !important;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0px;
+  /* background:transparent!important; */
+}
+
+main.cart section img,
+p,
+.qty-container,
+.remove-btn {
+  margin-bottom: 1rem;
+}
+main.cart section img {
+  width: 5rem;
+}
+main.cart section .qty-container {
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qty-container button {
+  cursor: pointer;
+  font-size: 20px;
+  padding: 0.3rem 1rem;
+  background: rgb(7, 212, 244);
+  border: none;
+  border-radius: 0px;
+  transition: 0.1s ease all;
+}
+.qty-container button:hover {
+  background: rgb(73, 171, 186);
+  font-weight: bold;
+}
+main.cart section .qty-container span {
+  margin: 0rem 0.3rem;
+}
+button.remove-btn {
+  color: rgb(204, 201, 201);
+  padding: 0.4rem 1rem;
+  background: rgba(182, 6, 121, 0.542);
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: 0.3s ease all;
+  cursor: pointer;
+}
+button.remove-btn:hover {
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  background: rgba(252, 25, 172, 0.542);
+  /* letter-spacing: .1rem; */
+}
+main .cart-footer {
+  /* width:100%; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  align-items: center;
+  /* padding: 1rem; */
+}
+main .cart-footer div {
+  margin: 0.5rem;
+  width: 10rem;
+}
+.cart-footer .btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-footer button {
+  /* color:rgb(0, 191, 255); */
+  /* background: rgb(42, 242, 205); */
+  color: rgb(234, 234, 234);
+  background: rgb(15, 98, 83);
+  padding: 0.5rem 2rem;
+  font-weight: bold;
+  font-size: 18px;
+  border: 1px solid white;
+  border-radius: 30px;
+  transition: 0.4s ease all;
+  display: flex;
+  /* margin-bottom: 1rem; */
+}
+.cart-footer button:hover {
+  letter-spacing: 0.1rem;
+  background: rgb(4, 159, 130);
+  color: white;
+  cursor: pointer;
+}
+/******************************************************** CART SECTION********************************************************/
+
+/***************************************************  CHECKOUT PAGE SECTION*****************************************************/
+main.checkout-wrapper {
+  /* background: rgb(191, 255, 0); */
+  padding: 1rem;
+}
+main.checkout-wrapper section {
+  /* background: rgb(184, 164, 164); */
+  padding: 0.5rem;
+  justify-content: space-around;
+  align-items: start;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+main.checkout-wrapper section .left {
+  /* background: rgb(193, 22, 22); */
+  padding: 0.5rem;
+  min-width: 15rem;
+  /* border: 1px solid black; */
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 2;
+  margin: 0.1rem 0.5rem;
+}
+
+main.checkout-wrapper section .right {
+  /* background: rgb(252, 28, 28); */
+  min-width: 15rem;
+  padding: 0.5rem;
+  /* border:1px solid black; */
+  background: rgb(246, 246, 246);
+  flex: 1;
+  margin: 0.1rem 0.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+main.checkout-wrapper section .right p {
+  text-transform: uppercase;
+  font-weight: bold;
+  /* text-align:right; */
+}
+main.checkout-wrapper section .right h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 2px solid black;
+  background: rgb(74, 201, 243);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+main.checkout-wrapper section .right h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 1rem;
+}
+main.checkout-wrapper section .right button {
+  border: none;
+  cursor: pointer;
+  background: rgb(208, 79, 79);
+  color: white;
+  font-weight: bold;
+  padding: 0.4rem;
+  width: 100%;
+  transition: 0.3s ease all;
+  text-transform: uppercase;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+main.checkout-wrapper section .right button:disabled{
+  cursor:not-allowed
+} 
+main.checkout-wrapper section .right button.enabled{
+  background: rgb(35, 207, 195);
+  /* background: rgb(208, 79, 79); */
+}
+main.checkout-wrapper section .right button.enabled:hover{
+  cursor: pointer;
+}
+
+/* main.checkout-wrapper section .right button:hover {
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+} */
+
+/***************************************************  CHECKOUT PAGE SECTION********************************************************/
+
+/******************************************* LOGIN AND SIGNUP SECTION********************************************************/
+main.Login-container {
+  /* border:2px solid red; */
+  padding: 0px !important;
+}
+.Login-container .Account {
+  /* border:1px solid red; */
+  height: auto;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80vw;
+  padding: 0.5rem;
+}
+.Account .heading {
+  margin: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+}
+.content .Account-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Account-form input,
+.Account-form button {
+  margin: 1rem;
+  width: 50vw;
+}
+.Account-form input {
+  border: 1px solid gray;
+  outline: none;
+  border-radius: 20px;
+  padding: 0.6rem 1rem;
+  background: transparent;
+}
+.Account-form input::placeholder {
+  color: rgb(49, 50, 50);
+}
+.Account-form input:focus {
+  border: 1px solid rgb(0, 217, 255);
+}
+.Account-form button {
+  max-width: 14rem;
+  font-size: 16px;
+  letter-spacing: 0.09rem;
+  border: none;
+  border-radius: 20px;
+  padding: 0.4rem;
+  background: rgb(1, 187, 255);
+  color: rgb(228, 228, 228);
+  transition: 0.3s ease all;
+}
+.Account-form button:hover {
+  letter-spacing: 0.2rem;
+  color: rgb(255, 255, 255);
+  background: rgb(39, 179, 230);
+}
+
+.Account-form p {
+  font-size: 15px !important;
+  color: #606568;
+  font-weight: normal;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0rem 1rem;
+}
+.Account-form p span a {
+  color: rgb(76, 0, 255);
+  transition: 0.3s sec ease all;
+}
+.Account-form p span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+/******************************************* LOGIN AND SIGNUP SECTION********************************************************/
+
+/******************************************* CHECKOUT FORM SECTION  ********************************************************/
+form.checkout-form {
+  /* border: 1px solid rgb(33, 207, 91); */
+  padding: 0.3rem;
+  display: flex;
+  width: 40vw;
+  flex-direction: column;
+}
+form.checkout-form div:nth-child(2) input {
+  width: 94%;
+}
+form.checkout-form div:nth-child(3) input {
+  width: 94%;
+}
+form.checkout-form > div {
+  /* border: 1px solid black; */
+  margin-bottom: 0.3rem;
+  padding: 0.2rem;
+}
+form.checkout-form input[type="text"] {
+  width: 46%;
+  margin: 0.2rem 0.4rem;
+  border: 1px solid gray;
+  border-radius: 0.2rem;
+  padding: 0.3rem;
+  outline: none;
+}
+form.checkout-form input[type="text"]::placeholder {
+  text-transform: capitalize;
+}
+form.checkout-form input[type="checkbox"] {
+  width: 1.5rem;
+  height: 1.1rem;
+  margin-top: 0.3rem;
+}
+form.checkout-form textarea {
+  margin-left: 0.4rem;
+  width: 94%;
+  padding: 0.3rem;
+}
+form.checkout-form button {
+  margin-left: 0.4rem;
+  width: 94%;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  background: rgb(117, 189, 220);
+  color: rgb(41, 36, 36);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s ease all;
+}
+form.checkout-form button:hover {
+  background: rgb(63, 187, 244);
+  letter-spacing: 0.1rem;
+}
+form.checkout-form input:focus,
+form.checkout-form textarea:focus {
+  border: 1px solid rgb(203, 82, 212);
+}
+form.checkout-form button:disabled {
+  color: red;
+}
+
+/******************************************* CHECKOUT FORM SECTION  ********************************************************/
+
+/******************************************* SINGLE PRODUCT********************************************************/
+
+.main-area {
+  padding: 1rem;
+  /* border:1px solid red; */
+  display: flex;
+  justify-content: center;
+}
+.centered {
+  /* border:1px solid red; */
+  width: 76vw;
+}
+picture {
+  position: relative;
+}
+
+img {
+  display: block;
+  border: 0;
+  width: 80%;
+  /* height: auto; */
+  /* height:10rem; */
+  /* object-fit: cover; */
+  /* background: rgb(222, 209, 209); */
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.card2 {
+  background: rgb(118, 222, 240);
+  margin-bottom: 1em;
+}
+
+/* Flexbox stuff */
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* background: rgb(248, 248, 248); */
+  /* padding:1rem; */
+  /* justify-content: space-between; */
+}
+
+.left-p {
+  background: rgb(93, 185, 227);
+  background: transparent;
+  margin: 0 !important;
+  /* border-radius: 2rem; */
+}
+.left-p .hidden-content {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.right-p {
+  background: transparent;
+  padding: 1rem;
+  margin: 0 !important;
+}
+.right-p h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.right-p p {
+  font-size: 1rem;
+}
+.right-p h3 {
+  font-size: 1.6rem;
+}
+.addbtn {
+  width: 10rem;
+}
+.addbtn button {
+  width: 9rem;
+  background: rgb(195, 127, 211);
+  border: none;
+  color: white;
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.6s ease all;
+
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  color: white;
+  border: none;
+  background: rgb(206, 212, 215);
+  /* margin: 0.6rem 0rem; */
+  background: linear-gradient(
+    90deg,
+    rgba(206, 212, 215, 1) 0%,
+    rgba(52, 196, 220, 1) 0%,
+    rgba(32, 194, 221, 1) 0%,
+    rgba(0, 36, 33, 1) 100%
+  );
+
+  transition: 0.3s all;
+}
+.addbtn button:hover {
+  background: rgb(8, 87, 93);
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+
+/******************************************* SINGLE PRODUCT********************************************************/
+
+/******************************************* ORDERS PAGE********************************************************/
+main.orders {
+  /* padding: 0.4rem; */
+  /* background: #000; */
+  padding: 0 !important  ;
+}
+main.orders .head {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 1rem;
+  border-radius: 0px;
+  background: rgb(241, 241, 241);
+  /* background: #fafafa;
+  box-shadow: 17px 17px 34px #b7b7b7, -17px -17px 34px #ffffff; */
+  margin-bottom: 0.7rem;
+  position: sticky;
+  top: 48px;
+
+  /* position:fixed; */
+  /* top:3rem */
+}
+main.orders .head div {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main.orders .body {
+  /* background: rgb(111, 254, 228);   */
+  /* padding: 0.3rem 1rem; */
+  display: flex;
+  justify-content: space-between;
+}
+main.orders .body .item-wrapper {
+  /* border: 1px solid red; */
+  flex: 3;
+  display: flex;
+  padding: 0.4rem;
+  margin: 0.2rem 0.3rem;
+  max-width: 30rem;
+}
+main.orders .body .item-wrapper .left {
+  flex: 1;
+  padding: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: #fafafa;
+  box-shadow: 22px 22px 89px #d5d5d5, -22px -22px 89px #ffffff;
+}
+main.orders .body .item-wrapper .right {
+  /* border: 1px solid rgb(31, 11, 249); */
+  flex: 2;
+  padding: 0.4rem;
+}
+main.orders .body .item-wrapper .right p {
+}
+
+main.orders .body .address {
+  flex: 2;
+  /* border: 1px solid rgb(31, 11, 249); */
+  padding: 0.4rem;
+  margin: 0.2rem 0.3rem;
+}
+main.orders .body .status {
+  /* border: 1px solid rgb(31, 11, 249); */
+  padding: 0.4rem;
+  margin: 0.2rem 0.3rem;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+main.orders .footer {
+  background: rgb(76, 104, 146);
+  padding: 0.3rem 1rem;
+}
+
+/******************************************* ORDERS PAGE********************************************************/
+
+/******************************************************** FOOTER ********************************************************/
+/* FOOTER STYLES */
+
+footer {
+  padding: 1rem;
+}
+
+footer section {
+  margin: 0.4rem;
+}
+
+footer section.left {
+  padding: 1rem;
+}
+footer section.left p {
+  color: rgb(48, 45, 45);
+  margin: 0.7rem 0px;
+  font-size: 14px;
+}
+
+footer section.left .social-links {
+  display: flex;
+  justify-content: start;
+}
+
+.left .social-links span {
+  border-radius: 49px;
+  background: rgb(206, 212, 215);
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgba(206, 212, 215, 1) 0%,
+    rgba(52, 196, 220, 1) 0%,
+    rgba(32, 194, 221, 1) 0%,
+    rgba(0, 36, 33, 1) 100%
+  );
+  box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px rgba(255, 255, 255, 0.15);
+  margin: 0px 0.2rem;
+  height: 1.6rem;
+  width: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease all;
+}
+
+.left .social-links span:hover {
+  background: rgb(59, 169, 203);
+}
+i {
+  color: #000000;
+}
+
+section h4 {
+  margin: 0.4rem 0rem;
+  color: rgb(17, 18, 18);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.pricing,
+.company,
+.newsletter {
+  padding: 0.4rem;
+}
+.pricing span,
+.company span {
+  padding: 0.2rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.3rem;
+  cursor: pointer;
+  color: #5a5a5a;
+  transition: 0.3s all;
+}
+.pricing span:hover,
+.company span:hover {
+  color: #232121;
+}
+
+.pricing div,
+.company div {
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletter p {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 13px;
+  margin: 0.7rem 0rem;
+  color: #5a5a5a;
+}
+.newsletter .subscribe {
+  border: 1px solid black;
+  border-radius: 0.3rem;
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-between;
+}
+.subscribe input {
+  border-radius: 0.3rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0.4rem;
+}
+.banner-text button,
+.card button,
+.subs-btn {
+  /* min-width: 8rem; */
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  color: white;
+  border: none;
+  background: rgb(206, 212, 215);
+  margin: 0.6rem 0rem;
+  background: linear-gradient(
+    90deg,
+    rgba(206, 212, 215, 1) 0%,
+    rgba(52, 196, 220, 1) 0%,
+    rgba(32, 194, 221, 1) 0%,
+    rgba(0, 36, 33, 1) 100%
+  );
+
+  transition: 0.3s all;
+}
+
+.banner-text button:hover,
+.card button:hover,
+.subs-btn:hover {
+  background: rgb(8, 87, 93);
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap !important;
+  justify-content: space-between;
+}
+footer section {
+  width: 20%;
+}
+
+footer section.left {
+  width: 20%;
+}
+footer section.middle-1 {
+  width: 20%;
+}
+footer section.middle-2 {
+  width: 20%;
+}
+footer section.right {
+  width: 30%;
+}
+
+div.copyright {
+  text-align: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 0.88rem;
+  color: #2a2929;
+  margin-bottom: 0.3rem;
+}
+/******************************************************** FOOTER ********************************************************/
+
+.slider {
+  /* border:10px solid red!important; */
+  width: 100% !important;
+  height: 789px !important;
+}
+.rsis-container {
+  width: 1250px !important;
+}
+
+.pgbtn {
+}
+
+/******************************************************** MEDIA QUERIES ********************************************************/
+
+@media only screen and (max-width: 900px) {
+  .left,
+  .right,
+  .middle-1,
+  .middle-2 {
+    color: red;
   }
-  to {
-    transform: rotate(360deg);
+  section.left,
+  section.middle-1,
+  section.middle-2,
+  section.right {
+    width: 100% !important;
+  }
+
+  header{
+  padding: 0px 0rem;
+
+  }
+
+  .nav-links {
+    /* display: none; */
+  }
+  .banner .image {
+    display: none;
+  }
+  .banner .banner-text {
+    width: 98%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main.featured .featured {
+    display: flex;
+    justify-content: center;
+  }
+  main.featured section {
+    width: 70%;
+  }
+
+  .testimonial section {
+    border: 1px solid yellow;
+    width: 10rem !important;
+  }
+
+  main.cart section {
+    width: 98%;
+  }
+
+  main.cart section {
+    flex-direction: column;
+  }
+  main.cart .cart-head {
+    display: none;
+  }
+  main.cart section .item-name {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cart-item div:nth-child(2) {
+    display: none;
+  }
+  .pgbtn {
+    /* color: red!important; */
+    /* width:100px */
+  }
+  .pgselect {
+    display: none !important;
   }
 }
+
+/* SINGLE PRODUCT PAGE MEDIA QUERIES */
+
+/* @media screen and (min-width: 40em) {
+  .cards {
+      display: flex;
+      flex-wrap: wrap;
+  }
+
+  .card2 {
+      flex: 0 1 calc(50.6% - 1em);
+      margin:.3rem;
+  }
+} */
+/* @media screen and (min-width: 40em) {
+  .cards {
+      display: flex;
+      flex-wrap: wrap;
+
+  }
+  .card2 {
+      flex: 0 1 calc(50.8% - 1em);
+      margin:.3rem
+  }
+} */
+@media screen and (min-width: 60em) {
+  .card2 {
+    flex: 0 1 calc(49.6% - 1em);
+    margin: 0.3rem;
+  }
+  .right-p {
+    /* display: none; */
+  }
+  .hidden-content {
+    display: flex;
+  }
+}
+
+/* @media screen and (max-width: 40em) {
+  .hidden-content{
+    display: flex;
+  }
+ } */
+
+/* SINGLE PRODUCT PAGE MEDIA QUERIES */
+
+/* test */
